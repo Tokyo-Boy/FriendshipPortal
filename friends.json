@@ -12,6 +12,24 @@
     "description": "A high-energy marketing professional who literally lives to dance. Absolute master of the flailing-arm technique and completely incapable of standing still. Always brings a wild, chaotic energy to every single party."
   },
   {
+    "id": 22,
+    "name": "Jimmy Fallon (Evil Variant)",
+    "avatar": "images/jimmy.jpg",
+    "description": "A late-night television host from a parallel universe. Unlike his joyful counterpart, he laughs maniacally instead of clapping, forces his guests to play high-stakes survival games, and uses his goatee to signal his devious intentions. Secretly plots to replace all house bands with techno DJs."
+  },
+  {
+    "id": 21,
+    "name": "Ronin",
+    "avatar": "images/ronin.jpg",
+    "description": "A rogue bounty hunter and wasteland survival specialist. He claims his mechanical eyepatch can see through walls, but it might just be a modified camera lens he found in an old tech vault. Enjoys collecting rare leather gloves and listening to synth-wave music on an old cassette player."
+  },
+  {
+    "id": 20,
+    "name": "Sensei Wa",
+    "avatar": "images/senseiwu.jpg",
+    "description": "A legendary martial arts master who speaks exclusively in cryptic riddles and ancient proverbs. Spends his days meditating on rocky cliffs and training next-generation warriors. He hates modern technology, so he relies entirely on a friendly carrier pigeon to read his digital direct messages."
+  },
+  {
     "id": 13,
     "name": "Harrison Vance",
     "avatar": "images/CEO.jpg",
