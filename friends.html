@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Friends</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f4f7f6;
+      margin: 0;
+      padding: 20px;
+    }
+    nav {
+      margin-bottom: 30px;
+      text-align: center;
+    }
+    nav a {
+      text-decoration: none;
+      color: #007bff;
+      font-weight: bold;
+      font-size: 1.1rem;
+      background: white;
+      padding: 10px 20px;
+      border-radius: 20px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    }
+    h1 {
+      text-align: center;
+      color: #333;
+      margin-top: 20px;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 25px;
+      max-width: 1100px;
+      margin: 30px auto;
+    }
+    .card {
+      background: white;
+      border-radius: 16px;
+      padding: 25px;
+      text-align: center;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .pfp-container {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 15px;
+    }
+    .pfp {
+      width: 110px;
+      height: 110px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid #28a745;
+    }
+    .name {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin: 10px 0;
+      color: #222;
+    }
+    .desc {
+      font-size: 0.92rem;
+      color: #555;
+      line-height: 1.4;
+      margin-bottom: 20px;
+      flex-grow: 1;
+    }
+    .remove-btn {
+      background-color: #dc3545;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 25px;
+      cursor: pointer;
+      font-weight: bold;
+      width: 100%;
+      transition: background 0.2s;
+    }
+    .remove-btn:hover {
+      background-color: #bd2130;
+    }
+    .empty-message {
+      text-align: center;
+      grid-column: 1 / -1;
+      color: #777;
+      font-size: 1.2rem;
+      margin-top: 50px;
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="index.html">← Back to Discover People</a>
+  </nav>
+
+  <h1>My Friends List</h1>
+  <div class="grid" id="friends-grid"></div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const grid = document.getElementById('friends-grid');
+      let addedFriends = JSON.parse(localStorage.getItem('addedFriends')) || [];
+
+      function checkEmpty() {
+        if (addedFriends.length === 0) {
+          grid.innerHTML = `<p class="empty-message">You haven't added any friends yet. Go back and add some!</p>`;
+        }
+      }
+
+      checkEmpty();
+
+      addedFriends.forEach(person => {
+        const card = document.createElement('div');
+        card.className = 'card';
+        card.innerHTML = `
+          <div>
+            <div class="pfp-container">
+              <img src="${person.avatar}" alt="${person.name}" class="pfp">
+            </div>
+            <div class="name">${person.name}</div>
+            <div class="desc">${person.description}</div>
+          </div>
+          <button class="remove-btn">Remove Friend</button>
+        `;
+
+        card.querySelector('.remove-btn').addEventListener('click', () => {
+          // Filter out the friend from array
+          addedFriends = addedFriends.filter(f => f.id !== person.id);
+          // Save back to local storage
+          localStorage.setItem('addedFriends', JSON.stringify(addedFriends));
+          // Remove from view
+          card.remove();
+          // Show message if list drops to 0
+          checkEmpty();
+        });
+
+        grid.appendChild(card);
+      });
+    });
+  </script>
+</body>
+</html>

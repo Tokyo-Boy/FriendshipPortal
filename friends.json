@@ -1,0 +1,86 @@
+[
+  {
+    "id": 1,
+    "name": "NotSure",
+    "avatar": "images/NotSure.webp",
+    "description": "A chronic overthinker who isn't entirely certain how they got here. Spends 45 minutes deciding what to watch on Netflix only to fall asleep 5 minutes into the movie. Expert at shrug emojis."
+  },
+  {
+    "id": 12,
+    "name": "Wacky Waving Inflatable Tube Man",
+    "avatar": "images/RedTube.webp",
+    "description": "A high-energy marketing professional who literally lives to dance. Absolute master of the flailing-arm technique and completely incapable of standing still. Always brings a wild, chaotic energy to every single party."
+  },
+  {
+    "id": 13,
+    "name": "Harrison Vance",
+    "avatar": "images/CEO.jpg",
+    "description": "Founder and CEO of a global tech firm. Constantly traveling between international offices, closing major deals, and answering urgent emails at 3:00 AM. When he actually gets a weekend off, he enjoys classic aviation and high-altitude hiking."
+  },
+  {
+    "id": 19,
+    "name": "Logan Abernathy",
+    "avatar": "images/logan.jpg",
+    "description": "An artisanal mustache wax connoisseur and professional barista trainer. Takes exactly 14 minutes to pour a single cup of pour-over coffee. He judges people entirely based on their choice of font and only rides a vintage bicycle with no brakes."
+  },
+  {
+    "id": 2,
+    "name": "Alex Rivera",
+    "avatar": "images/Alex.webp",
+    "description": "Digital nomad currently working out of a beach cafe in Bali. Specializes in building sleek mobile apps while consuming unhealthy amounts of iced espresso. Ask him about his passport mishap stories."
+  },
+  {
+    "id": 3,
+    "name": "Sam Taylor",
+    "avatar": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150",
+    "description": "Senior UX Designer by day, amateur mountain climber by weekend. Obsessed with clean typography, micro-interactions, and finding the ultimate trail mix ratio. Always down for an outdoor adventure."
+  },
+  {
+    "id": 4,
+    "name": "Jordan Lee",
+    "avatar": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150",
+    "description": "Self-taught pixel artist and retro game collector. Houses a massive collection of vintage 90s arcade cabinets in their basement. Currently composing a lo-fi chiptune album for an upcoming indie game project."
+  },
+  {
+    "id": 5,
+    "name": "Elena Rostova",
+    "avatar": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150",
+    "description": "Marine biologist studying deep-sea coral reefs. When she isn't scuba diving or analyzing data, she teaches pottery classes and runs a local book club dedicated entirely to sci-fi and fantasy novels."
+  },
+  {
+    "id": 6,
+    "name": "Marcus Looper",
+    "avatar": "https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?w=150",
+    "description": "Classical pianist turned cybersecurity analyst. Enjoys finding patterns in complex code and complex sheet music alike. Can solve a Rubik's cube blindfolded in under two minutes."
+  },
+  {
+    "id": 7,
+    "name": "Chloe Bennett",
+    "avatar": "https://images.unsplash.com/photo-1517841905240-472988babdf9?w=150",
+    "description": "Professional pastry chef with a passion for architectural cake design. She treats baking like structural engineering, resulting in massive, gravity-defying sweet treats that taste as good as they look."
+  },
+  {
+    "id": 8,
+    "name": "Devon Miller",
+    "avatar": "https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?w=150",
+    "description": "Urban landscape photographer who explores abandoned buildings at sunrise. Captures the beauty of forgotten spaces. Collects analog film cameras and owns a very spoiled rescue greyhound."
+  },
+  {
+    "id": 9,
+    "name": "Aisha Khan",
+    "avatar": "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=150",
+    "description": "Aerospace engineering student working on miniature satellite propulsion systems. Spends her free time volunteering at the local planetarium and debating the physical accuracy of space movies."
+  },
+  {
+    "id": 10,
+    "name": "Oliver G",
+    "avatar": "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=150",
+    "description": "Botanist who has transformed their small city apartment into an absolute indoor jungle. Cultivates rare tropical plants and hosts a popular podcast covering plant care and soil ecology."
+  },
+  {
+    "id": 11,
+    "name": "Maya Lin",
+    "avatar": "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=150",
+    "description": "Independent documentary filmmaker documenting the revival of traditional folk arts across the globe. Always traveling light, carrying a notepad, and looking for an intriguing story to tell."
+  }
+]

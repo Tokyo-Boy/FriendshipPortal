@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Discover Friends</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f4f7f6;
+      margin: 0;
+      padding: 20px;
+    }
+    nav {
+      margin-bottom: 30px;
+      text-align: center;
+    }
+    nav a {
+      text-decoration: none;
+      color: #007bff;
+      font-weight: bold;
+      font-size: 1.1rem;
+      background: white;
+      padding: 10px 20px;
+      border-radius: 20px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    }
+    h1 {
+      text-align: center;
+      color: #333;
+      margin-top: 20px;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 25px;
+      max-width: 1100px;
+      margin: 30px auto;
+    }
+    .card {
+      background: white;
+      border-radius: 16px;
+      padding: 25px;
+      text-align: center;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      transition: transform 0.2s, box-shadow 0.2s;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+    }
+    .pfp-container {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 15px;
+    }
+    .pfp {
+      width: 110px;
+      height: 110px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid #007bff;
+    }
+    .name {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin: 10px 0;
+      color: #222;
+    }
+    .desc {
+      font-size: 0.92rem;
+      color: #555;
+      line-height: 1.4;
+      margin-bottom: 20px;
+      flex-grow: 1;
+    }
+    .btn {
+      background-color: #007bff;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 25px;
+      cursor: pointer;
+      font-weight: bold;
+      width: 100%;
+      transition: background 0.2s;
+    }
+    .btn:hover {
+      background-color: #0056b3;
+    }
+    /* Styles for when a user is added */
+    .btn.added {
+      background-color: #dc3545;
+    }
+    .btn.added:hover {
+      background-color: #bd2130;
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="friends.html">View My Friends List 👥</a>
+  </nav>
+
+  <h1>Discover People</h1>
+  <div class="grid" id="people-grid"></div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const grid = document.getElementById('people-grid');
+      let addedFriends = JSON.parse(localStorage.getItem('addedFriends')) || [];
+
+      fetch('friends.json')
+        .then(response => response.json())
+        .then(data => {
+          data.forEach(person => {
+            const card = document.createElement('div');
+            card.className = 'card';
+
+            const isAdded = addedFriends.some(f => f.id === person.id);
+
+            card.innerHTML = `
+              <div>
+                <div class="pfp-container">
+                  <img src="${person.avatar}" alt="${person.name}" class="pfp">
+                </div>
+                <div class="name">${person.name}</div>
+                <div class="desc">${person.description}</div>
+              </div>
+              <button class="btn ${isAdded ? 'added' : ''}" data-id="${person.id}">
+                ${isAdded ? 'Remove Friend' : 'Add Friend'}
+              </button>
+            `;
+
+            const button = card.querySelector('.btn');
+            button.addEventListener('click', () => {
+              // Reload fresh storage data in case of multiple tabs
+              addedFriends = JSON.parse(localStorage.getItem('addedFriends')) || [];
+              const currentlyAdded = addedFriends.some(f => f.id === person.id);
+
+              if (currentlyAdded) {
+                // Remove Friend logic
+                addedFriends = addedFriends.filter(f => f.id !== person.id);
+                button.textContent = 'Add Friend';
+                button.classList.remove('added');
+              } else {
+                // Add Friend logic
+                addedFriends.push(person);
+                button.textContent = 'Remove Friend';
+                button.classList.add('added');
+              }
+              
+              localStorage.setItem('addedFriends', JSON.stringify(addedFriends));
+            });
+
+            grid.appendChild(card);
+          });
+        })
+        .catch(err => console.error('Error fetching data:', err));
+    });
+  </script>
+</body>
+</html>
