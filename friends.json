@@ -12,6 +12,18 @@
     "description": "A high-energy marketing professional who literally lives to dance. Absolute master of the flailing-arm technique and completely incapable of standing still. Always brings a wild, chaotic energy to every single party."
   },
   {
+    "id": 24,
+    "name": "Dave Murphy",
+    "avatar": "images/Dave.webp",
+    "description": "An incredibly charismatic corporate mediator who basically lives at his local coffee shop. Known for having a smile so bright it can de-escalate high-stakes board meetings instantly. He claims he can close any business deal as long as a caramel macchiato is involved."
+  },
+  {
+    "id": 23,
+    "name": "Beluga Yelton",
+    "avatar": "images/beluga.jpg",
+    "description": "An aspiring competitive speedrunner and full-time discord moderator. He wears his lucky fedora to every stream and has spent over 2,500 hours attempting to master a single skip in an obscure 2000s platformer. Survives entirely on instant ramen and the validation of his chat."
+  },
+  {
     "id": 21,
     "name": "Ronin",
     "avatar": "images/ronin.jpg",
